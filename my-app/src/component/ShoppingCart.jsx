@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from './product'
+import NavBar from './navbar';
 
 class ShoppingCart extends Component {
     state = { 
@@ -42,6 +43,7 @@ class ShoppingCart extends Component {
     render() { 
         return (
             <React.Fragment>
+                <NavBar/>
                 <h1 className='badge bg-info  m-2'>shoppingCart</h1>
                 <br />
                 <button onClick={this.handleReset} className='fa-solid fa-zero btn btn-warning btn-sm m-2'>Reset</button>
