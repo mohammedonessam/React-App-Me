@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 
 class ShoppingCart extends Component {
-    {/* move  state to app file to make lifting state up for navbar can read and access the state  */}
+    //  move  state to app file to make lifting state up for navbar can read and access the state 
     render() { 
         return (
             <React.Fragment>
