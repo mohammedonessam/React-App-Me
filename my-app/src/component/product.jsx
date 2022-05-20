@@ -27,7 +27,7 @@ class Product extends Component {
                 </div>
                 <div className="col-4">
                     <button onClick={()=> {this.props.onIncrement(this.props.product)}} className= "fa-solid fa-plus btn btn-light btn-sm m-1"></button>
-                    <button onClick={this.decreamentFun} className= "fa-solid fa-minus btn btn-light btn-sm m-1"></button>
+                    <button onClick={()=>{this.props.onDecrement(this.props.product)}} className= "fa-solid fa-minus btn btn-light btn-sm m-1"></button>
                     <i onClick={()=>{this.props.onDelete(this.props.product)}} className="fa-solid fa-trash btn btn-light btn-sm m-1"></i>
                 </div>
             </div>

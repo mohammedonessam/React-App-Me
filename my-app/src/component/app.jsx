@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './navbar';
-import ShoppingCart from './../../component/ShoppingCart';
+import ShoppingCart from './ShoppingCart';
 
 
 

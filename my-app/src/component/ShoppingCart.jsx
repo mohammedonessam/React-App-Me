@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Product from './product'
-import NavBar from './navbar';
+// import NavBar from './navbar';
+
 
 class ShoppingCart extends Component {
     state = { 
@@ -10,14 +11,15 @@ class ShoppingCart extends Component {
             {id:3, name:"cola", count:3}
         ]
      }
-     handleDelete =(product) => {
+    handleDelete =(product) => {
         //Clone
+        let products= [...this.state.products]
         //Edit
-        const products= this.state.products.filter(p=>p.id !==product.id)
+        products= this.state.products.filter(p=>p.id !==product.id)
         //Set state
         this.setState({products})
      }
-     handleReset =()=>{
+    handleReset =()=>{
          //clone
         let products= [...this.state.products]
          //Edit
@@ -28,22 +30,31 @@ class ShoppingCart extends Component {
          // Set state
          this.setState({products})
      }
-     handleIncrement = (product) => {
-         // clone
-            const products = [...this.state.products]
-            //deep clone object to maintain increment function
-            const index = products.indexOf(product)
-            products[index]={...products[index]}
-         // Edit
-         products[index].count++;
-         // Set state
-         this.setState({products})
+    handleIncrement = (product) => {
+        // clone
+        const products = [...this.state.products]
+        //deep clone object to maintain increment function
+        const index = products.indexOf(product)
+        products[index]={...products[index]}
+        // Edit
+        products[index].count++;
+        // Set State
+        this.setState({products})
         }
-
+    handleDecrement = (product)=>{
+        // clone
+        const products = [...this.state.products]
+        //deep clone object to maintain increment function
+        const index = products.indexOf(product)
+        products[index]={...products[index]}
+        // Edit
+        products[index].count--;
+        // Set State
+        this.setState({products})
+        }
     render() { 
         return (
             <React.Fragment>
-                <NavBar/>
                 <h1 className='badge bg-info  m-2'>shoppingCart</h1>
                 <br />
                 <button onClick={this.handleReset} className='fa-solid fa-zero btn btn-warning btn-sm m-2'>Reset</button>
@@ -51,6 +62,7 @@ class ShoppingCart extends Component {
                 <Product key={product.id} 
                     onDelete={this.handleDelete}
                     onIncrement={this.handleIncrement}
+                    onDecrement={this.handleDecrement}
                 product={product}>
                 <h4>{product.id}</h4>
                 </Product>
