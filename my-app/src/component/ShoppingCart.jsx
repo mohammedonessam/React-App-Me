@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Product from "./product"
 
 
 class ShoppingCart extends Component {
@@ -10,7 +10,16 @@ class ShoppingCart extends Component {
                 <h1 className='badge bg-info  m-2'>shoppingCart</h1>
                 <br />
                 <button onClick={this.props.onReset} className='fa-solid fa-zero btn btn-warning btn-sm m-2'>Reset</button>
-                {/* move this function to app file to make lifting state up for navbar can read and access state  */}
+                {this.props.products.map(product => (
+                        <Product key={product.id} 
+                            onDelete={this.props.onDelete}
+                            onIncrement={this.props.onIncrement}
+                            onDecrement={this.props.onDecrement} 
+                            product={product}>
+                            <h4>{product.id}</h4>
+                        </Product>
+                    ))}
+                {/* delete this function to make lifting state up */}
                 {/* {this.props.products.map(product => (
                 <Product key={product.id} 
                 

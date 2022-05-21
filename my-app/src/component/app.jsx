@@ -57,18 +57,16 @@ class App extends Component {
     render() { 
         return (
             <React.Fragment>
-                <NavBar/>
+                <NavBar pruductsCount = {this.state.products.filter(p=>p.count>0).length}/>
                 <main className="container">
-                    <ShoppingCart onReset={this.handleReset}/> 
-                    {this.state.products.map(product => (
-                        <Product key={product.id} 
+                    <ShoppingCart
+                        products={this.state.products}
+                        onReset={this.handleReset}
                         onDelete={this.handleDelete}
                         onIncrement={this.handleIncrement}
                         onDecrement={this.handleDecrement} 
-                        product={product}>
-                        <h4>{product.id}</h4>
-                        </Product>
-                    ))}
+                    />
+                    
                 </main>
             </React.Fragment>
         );
