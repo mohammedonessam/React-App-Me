@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Product extends Component {
     // to have single source of truth not use state || this.state
@@ -20,7 +21,11 @@ class Product extends Component {
                 </div>
                 <div className="col-2">
                     {this.props.product.name.length === 0 && <h4>No Names</h4> }
-                    <span>{this.props.product.name}</span>
+                    <span>
+                       <Link to={`/productdetails/${this.props.product.id}/${this.props.product.name}`}>
+                           {this.props.product.name}
+                       </Link>
+                    </span>
                 </div>
                 <div className="col-1">
                     <span className= {this.classes()}> {this.props.product.count}</span>

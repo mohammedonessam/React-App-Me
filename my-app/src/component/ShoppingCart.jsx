@@ -7,7 +7,7 @@ class ShoppingCart extends Component {
     render() { 
         return (
             <React.Fragment>
-                <h1 className='badge bg-info  m-2'>shoppingCart</h1>
+                <h1 className='text-uppercase badge bg-info  m-2'>shopping Cart</h1>
                 <br />
                 <button onClick={this.props.onReset} className='fa-solid fa-zero btn btn-warning btn-sm m-2'>Reset</button>
                 {this.props.products.map(product => (

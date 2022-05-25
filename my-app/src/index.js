@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-
+import { BrowserRouter } from 'react-router-dom';
 // import ShoppingCart from './ShoppingCart';
 
 
@@ -13,4 +13,10 @@ import App from './component/app';
 // createRoot.render(<Product/>, document.querySelector("#root"));
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
-root.render(<App />);
+root.render(
+    <StrictMode>
+<BrowserRouter>
+<App/>
+</BrowserRouter>
+    </StrictMode>
+);
