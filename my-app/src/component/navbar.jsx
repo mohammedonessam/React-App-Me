@@ -27,9 +27,9 @@ const NavBar = (props) => {
               <NavLink className="nav-link link-light"  to="./shoppingCart">shopping cart</NavLink>
             </li>
           </ul>
-          <div className="badge rounded-pill bg-info text-dark">
-            {props.pruductsCount}
-          </div>
+        <div className="badge rounded-pill bg-info text-dark">
+          {props.pruductsCount}
+        </div>
         </div>
     </nav>) 
 );
