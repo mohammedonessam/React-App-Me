@@ -1,0 +1,18 @@
+{ 
+    
+        "products": [
+            {"id":1, "name":"burger", "count":0,"price":15, "isInCart":false, "sort":"eat"},
+            {"id":2, "name":"fries", "count":0,"price":10, "isInCart":false, "sort":"eat"},
+            {"id":3, "name":"pizza", "count":0,"price":30, "isInCart":false, "sort":"eat"},
+            {"id":4, "name":"BBQ meat", "count":0,"price":20, "isInCart":false, "sort":"eat"},
+            {"id":5, "name":"chicken", "count":0,"price":15, "isInCart":false, "sort":"eat"},
+            {"id":6, "name":"authentic grill", "count":0,"price":12, "isInCart":false, "sort":"eat"},
+            {"id":7, "name":"best cheeseCake", "count":0,"price":10, "isInCart":false, "sort":"eat"},
+            {"id":8, "name":"best taste", "count":0,"price":2, "isInCart":false, "sort":"eat"},
+            {"id":9, "name":"chocolate cake", "count":0,"price":10, "isInCart":false, "sort":"eat"},
+            {"id":10, "name":"water", "count":0,"price":3, "isInCart":false, "sort":"drink"},
+            {"id":11, "name":"cola", "count":0,"price":6, "isInCart":false, "sort":"drink"},
+            {"id":12, "name":"cocktail", "count":0,"price":20, "isInCart":false, "sort":"drink"}
+        ]
+    
+}

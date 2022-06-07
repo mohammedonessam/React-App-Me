@@ -7,10 +7,12 @@ class ShoppingCart extends Component {
     render() { 
         return (
             <React.Fragment>
+                <div className='container'>
                 <h1 className='text-uppercase badge bg-info  m-2'>shopping Cart</h1>
                 <br />
                 <button onClick={this.props.onReset} className='fa-solid fa-zero btn btn-warning btn-sm m-2'>Reset</button>
                 {this.props.products.map(product => (
+                    product.isInCart?
                         <Product key={product.id} 
                             onDelete={this.props.onDelete}
                             onIncrement={this.props.onIncrement}
@@ -18,6 +20,7 @@ class ShoppingCart extends Component {
                             product={product}>
                             <h4>{product.id}</h4>
                         </Product>
+                        :!product.isInCart
                     ))}
                 {/* delete this function to make lifting state up */}
                 {/* {this.props.products.map(product => (
@@ -30,6 +33,7 @@ class ShoppingCart extends Component {
                 <h4>{product.id}</h4>
                 </Product>
                 ))} */}
+                </div>
             </React.Fragment>
         );      
     }
